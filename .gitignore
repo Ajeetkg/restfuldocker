@@ -1,0 +1,12 @@
+*.iml
+*.idea
+.idea/
+*swp
+.settings
+*.class
+*.bak
+*.war
+*.project
+*.log*
+target/
+
