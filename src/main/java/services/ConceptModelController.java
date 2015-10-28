@@ -1,6 +1,7 @@
 package services;
 
 
+import com.wordnik.swagger.annotations.ApiOperation;
 import domain.ConceptModel;
 import hello.Greeting;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 
 @RestController
@@ -39,7 +39,8 @@ public class ConceptModelController {
         return new ResponseEntity<ConceptModel>(conceptModel, httpHeaders, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value="/concept", method=RequestMethod.GET)
+    @RequestMapping(value="/concept/hello", method=RequestMethod.GET)
+    @ApiOperation(httpMethod = "GET", value="Say hello to world using Swagger")
     public ResponseEntity<List<ConceptModel>> getConceptById(@RequestParam(value="id", defaultValue = "1") String conceptId){
         ConceptModel model = new ConceptModel(2,"Pulmonary Cancer");
         List<ConceptModel> conceptList = new ArrayList<ConceptModel>();
