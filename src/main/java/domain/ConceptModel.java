@@ -8,7 +8,7 @@ public class ConceptModel {
     private final long id;
     private final String content;
 
-    public Greeting(long id, String content) {
+    public ConceptModel(long id, String content) {
         this.id = id;
         this.content = content;
     }
