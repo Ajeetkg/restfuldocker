@@ -1,4 +1,4 @@
-RESTful Webservice with Swagger and Docker
+##RESTful Webservice with Swagger and Docker
 
 This is a sample application demonstrating simple RESTful Webservices with swagger and docker.
 
@@ -8,3 +8,12 @@ mvn package docker:build
 
 You can access the web-services at:
 http://192.168.99.100:8080/restfuldocker/
+
+## API Reference
+APIs can be accessed using the following address.
+
+## Contributors
+Please feel free to add sample webservices
+
+## License
+Apache common creative license
