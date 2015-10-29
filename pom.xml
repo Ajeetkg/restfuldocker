@@ -30,13 +30,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.ajar</groupId>
-            <artifactId>swagger-spring-mvc-ui</artifactId>
-            <version>0.1</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -46,13 +39,7 @@
 
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>oss-jfrog-artifactory</id>
-            <name>oss-jfrog-artifactory-releases</name>
-            <url>http://oss.jfrog.org/artifactory/oss-release-local</url>
-        </repository>
-    </repositories>
+
     <build>
         <plugins>
             <plugin>
