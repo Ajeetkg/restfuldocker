@@ -39,7 +39,7 @@ public class ConceptModelController {
         return new ResponseEntity<ConceptModel>(conceptModel, httpHeaders, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value="/concept/hello", method=RequestMethod.GET)
+    @RequestMapping(value="/concept", method=RequestMethod.GET)
     @ApiOperation(httpMethod = "GET", value="Say hello to world using Swagger")
     public ResponseEntity<List<ConceptModel>> getConceptById(@RequestParam(value="id", defaultValue = "1") String conceptId){
         ConceptModel model = new ConceptModel(2,"Pulmonary Cancer");
