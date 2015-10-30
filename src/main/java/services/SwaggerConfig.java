@@ -24,8 +24,8 @@ import java.util.List;
 @ComponentScan(basePackages = "com.mangofactory.swagger")
 public class SwaggerConfig {
 
-    public static final List<String> DEFAULT_INCLUDE_PATTERNS = Arrays.asList("/news/.*");
-    public static final String SWAGGER_GROUP = "mobile-api";
+    public static final List<String> DEFAULT_INCLUDE_PATTERNS = Arrays.asList("/ont/.*");
+    public static final String SWAGGER_GROUP = "ontology-api";
 
     @Value("${app.docs}")
     private String docsLocation;
@@ -65,12 +65,12 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo(
-                "News API",
-                "Mobile applications and beyond!",
-                "https://helloreverb.com/terms/",
-                "matt@raibledesigns.com",
-                "Apache 2.0",
-                "http://www.apache.org/licenses/LICENSE-2.0.html"
+                "Ontology API",
+                "",
+                "",
+                "",
+                "",
+                ""
         );
         return apiInfo;
     }

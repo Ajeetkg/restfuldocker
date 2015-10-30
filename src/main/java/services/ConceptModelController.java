@@ -20,27 +20,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 public class ConceptModelController {
 
-    private static final String template = "Hello, %s!";
     private final AtomicInteger counter = new AtomicInteger();
     private Map<Integer, ConceptModel> conceptMap = new ConcurrentHashMap<Integer, ConceptModel>();
 
-    @RequestMapping(value="/greeting", method= RequestMethod.GET)
-    public Greeting getConcept(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-                String.format(template, name));
-    }
-
-    @RequestMapping(value="/concept", method=RequestMethod.POST)
+    @RequestMapping(value="/ont/ontology", method=RequestMethod.POST)
+    @ApiOperation(httpMethod = "POST", value="Add Ontology to domain")
     public ResponseEntity<ConceptModel> addConcept(@RequestBody ConceptModel conceptModel){
         System.out.println(conceptModel);
         HttpHeaders httpHeaders = new HttpHeaders();
         conceptMap.put(counter.incrementAndGet(),conceptModel);
-        httpHeaders.setLocation(URI.create("localhost:8080/concept"));
+        httpHeaders.setLocation(URI.create("localhost:8080/ont/ontology"));
         return new ResponseEntity<ConceptModel>(conceptModel, httpHeaders, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value="/concept", method=RequestMethod.GET)
-    @ApiOperation(httpMethod = "GET", value="Say hello to world using Swagger")
+    @RequestMapping(value="/ont/ontology", method=RequestMethod.GET)
+    @ApiOperation(httpMethod = "GET", value="Get the available Ontology")
     public ResponseEntity<List<ConceptModel>> getConceptById(@RequestParam(value="id", defaultValue = "1") String conceptId){
         ConceptModel model = new ConceptModel(2,"Pulmonary Cancer");
         List<ConceptModel> conceptList = new ArrayList<ConceptModel>();
