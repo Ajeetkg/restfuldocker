@@ -1,6 +1,7 @@
 package services;
 
 
+import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import domain.ConceptModel;
 import hello.Greeting;
@@ -18,6 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 @RestController
+@Api(value="Ontology", description = "Ontology API")
 public class ConceptModelController {
 
     private final AtomicInteger counter = new AtomicInteger();
